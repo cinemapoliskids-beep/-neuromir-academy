@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НЕЙРОМИР — Standalone Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        :root {
+          --bg-dark: #0A0E14;
+          --cyan: #00E5FF;
+          --cyan-glow: rgba(0, 229, 255, 0.5);
+          --marketing: #FF6D00; --smm: #FF00FF; --sales: #00E676; --hr: #2979FF; --leaders: #00B8D4; --education: #D500F9;
+          --glass-bg: rgba(255, 255, 255, 0.03); --glass-border: rgba(255, 255, 255, 0.1); --glass-blur: blur(12px);
+          --font-inter: 'Inter', sans-serif; --font-manrope: 'Manrope', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-dark); color: white; font-family: var(--font-inter); overflow-x: hidden; line-height: 1.5; }
+        h1, h2, h3 { font-family: var(--font-manrope); font-weight: 800; letter-spacing: -0.02em; }
+        .glass { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: 16px; }
+        .neon-border { border: 1px solid var(--cyan); box-shadow: 0 0 15px var(--cyan-glow); }
+        .cyan-text { color: var(--cyan); text-shadow: 0 0 10px var(--cyan-glow); }
+        .btn { padding: 12px 24px; border-radius: 8px; font-weight: 600; transition: all 0.3s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; border: none; }
+        .btn-primary { background: var(--cyan); color: var(--bg-dark); box-shadow: 0 0 20px var(--cyan-glow); }
+        .btn-outline { border: 1px solid var(--cyan); color: var(--cyan); background: transparent; }
+        .section-padding { padding: 80px 5%; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .flex { display: flex; } .flex-col { flex-direction: column; } .flex-wrap { flex-wrap: wrap; }
+        .items-center { align-items: center; } .justify-between { justify-content: space-between; } .justify-center { justify-content: center; }
+        .gap-4 { gap: 1rem; } .gap-6 { gap: 1.5rem; } .gap-8 { gap: 2rem; } .gap-12 { gap: 3rem; } .gap-20 { gap: 5rem; }
+        .grid { display: grid; } .grid-cols-2 { grid-template-columns: repeat(2, 1fr); } .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 768px) { .grid-cols-2, .grid-cols-4 { grid-template-columns: 1fr; } .hidden-mobile { display: none; } }
+        .text-4xl { font-size: 2.25rem; } .text-5xl { font-size: 3rem; } .text-6xl { font-size: 3.75rem; }
+        .mb-4 { margin-bottom: 1rem; } .mb-6 { margin-bottom: 1.5rem; } .mb-8 { margin-bottom: 2rem; } .mb-12 { margin-bottom: 3rem; } .mb-20 { margin-bottom: 5rem; }
+        .w-full { width: 100%; } .relative { position: relative; } .absolute { position: absolute; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; } .z-10 { z-index: 10; }
+        .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); } .opacity-40 { opacity: 0.4; } .opacity-60 { opacity: 0.6; }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .timeline-line { height: 2px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); margin: 40px 0; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const Header = () => (
+            <header style={{position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 50, background: 'rgba(10,14,20,0.8)', backdropFilter: 'blur(10px)', padding: '15px 0'}}>
+                <div className="container flex justify-between items-center px-6">
+                    <div className="flex items-center gap-3">
+                        <div className="btn-primary" style={{width: 32, height: 32, borderRadius: 4}}></div>
+                        <span style={{fontWeight: 800, fontSize: '1.2rem'}}>НЕЙРОМИР</span>
+                    </div>
+                    <nav className="hidden-mobile flex gap-8">
+                        <a href="#" style={{color: 'rgba(255,255,255,0.7)', textDecoration: 'none'}}>Программы</a>
+                        <a href="#" style={{color: 'rgba(255,255,255,0.7)', textDecoration: 'none'}}>Кейсы</a>
+                        <a href="#" style={{color: 'rgba(255,255,255,0.7)', textDecoration: 'none'}}>Отзывы</a>
+                    </nav>
+                    <button className="btn btn-outline">Связаться</button>
+                </div>
+            </header>
+        );
+
+        const Hero = () => (
+            <section className="relative" style={{minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 80}}>
+                <div className="container px-6 relative z-10">
+                    <div style={{maxWidth: 800}}>
+                        <h1 className="text-6xl mb-6">Внедрим AI в ваш бизнес — <span className="cyan-text">освободим команду</span></h1>
+                        <p className="text-xl mb-12" style={{color: 'rgba(255,255,255,0.6)'}}>Академия «Нейромир» обучает маркетологов, HR, SMM и руководителей. Окупаемость за 1.3 месяца.</p>
+                        <div className="flex flex-wrap gap-4">
+                            <button className="btn btn-primary" style={{padding: '18px 40px', fontSize: '1.2rem'}}>Получить разбор</button>
+                            <button className="btn btn-outline" style={{padding: '18px 40px', fontSize: '1.2rem'}}>Кейсы</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+
+        const Direction = ({ title, sub, color, metric }) => (
+            <section className="section-padding" style={{borderTop: '1px solid rgba(255,255,255,0.05)'}}>
+                <div className="container">
+                    <div className="grid grid-cols-2 gap-20 items-center">
+                        <div>
+                            <p style={{color: color, fontWeight: 'bold', marginBottom: 10, letterSpacing: 2}}>{sub}</p>
+                            <h2 className="text-5xl mb-8">{title}</h2>
+                            <div className="glass p-8 mb-8" style={{borderColor: color}}>
+                                <div className="text-5xl font-extrabold mb-2" style={{color: color}}>{metric}</div>
+                                <p style={{color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem'}}>СРЕДНИЙ РЕЗУЛЬТАТ</p>
+                            </div>
+                            <button className="btn btn-primary" style={{background: color, boxShadow: `0 0 20px ${color}88`}}>Начать рост →</button>
+                        </div>
+                        <div className="glass" style={{aspectRatio: '16/9', background: 'rgba(255,255,255,0.02)'}}></div>
+                    </div>
+                </div>
+            </section>
+        );
+
+        const Pricing = () => (
+            <section className="section-padding bg-white/5">
+                <div className="container">
+                    <h2 className="text-4xl text-center mb-20">Тарифы обучения</h2>
+                    <div className="grid grid-cols-3 gap-8">
+                        <div className="glass p-10 text-center">
+                            <h3 className="mb-4">БАЗОВЫЙ</h3>
+                            <div className="text-4xl mb-8">20 000 ₽</div>
+                            <button className="btn btn-outline w-full">Выбрать</button>
+                        </div>
+                        <div className="glass p-10 text-center" style={{borderColor: 'var(--cyan)', transform: 'scale(1.05)', background: 'rgba(255,255,255,0.05)'}}>
+                            <h3 className="mb-4 cyan-text">ПРОФИ</h3>
+                            <div className="text-4xl mb-8">70 000 ₽</div>
+                            <button className="btn btn-primary w-full">Выбрать популярный</button>
+                        </div>
+                        <div className="glass p-10 text-center">
+                            <h3 className="mb-4">КОРПО</h3>
+                            <div className="text-4xl mb-8">150 000 ₽</div>
+                            <button className="btn btn-outline w-full">Обсудить</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+
+        function App() {
+            return (
+                <div>
+                    <Header />
+                    <Hero />
+                    <Direction title="Маркетинг: рост" sub="MARKETING" color="var(--marketing)" metric="+40% ROMI" />
+                    <Direction title="SMM: контент" sub="SMM" color="var(--smm)" metric="x3 Reach" />
+                    <Pricing />
+                    <footer className="section-padding text-center" style={{borderTop: '1px solid rgba(255,255,255,0.05)'}}>
+                        <p style={{color: 'rgba(255,255,255,0.2)'}}>© 2025 НЕЙРОМИР. Все права защищены.</p>
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

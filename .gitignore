@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.DS_Store
+.tempmediaStorage/
+*.log
+get_dims*.ps1
+get_video_dims.ps1
+reorder.cjs
