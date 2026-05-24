@@ -357,32 +357,27 @@
             <h2 style="font-size: clamp(22px, 5.2vw, 30px); margin-bottom: 16px; letter-spacing: -0.02em; font-weight: 900; text-transform: uppercase; color: #fff; line-height: 1.25;"><span class="cyan-glow">AI-РЕШЕНИЯ</span> ПОД ЛЮБОЙ ОТДЕЛ</h2>
             
             <div class="glass mobile-banner-card" style="position: relative; border-radius: 24px; border: 1px solid rgba(0, 229, 255, 0.25); background: rgba(10, 14, 20, 0.5); width: 100%; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column;">
-                <!-- Top portion: 16:9 background banner with mobil3.jpg -->
-                <div style="position: relative; aspect-ratio: 16 / 9; width: 100%; background: url('./mobil3.jpg') no-repeat right center; background-size: cover; display: flex; align-items: center; padding: 15px;">
+                <!-- Top portion: 21:9 background banner with mobil3.jpg -->
+                <div style="position: relative; aspect-ratio: 21 / 9; width: 100%; background: url('./mobil3.jpg') no-repeat right center; background-size: cover; display: flex; align-items: center; padding: 15px;">
                     <!-- Decorative background glow -->
-                    <div style="position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(0, 229, 255, 0.1), transparent 60%); pointer-events: none;"></div>
+                    <div style="position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(0, 229, 255, 0.08), transparent 60%); pointer-events: none;"></div>
                     
-                    <!-- Text container block on dark substrate (left side) -->
-                    <div style="position: relative; z-index: 2; display: flex; flex-direction: column; gap: 8px; max-width: 58%; width: 100%; background: rgba(10, 14, 20, 0.15); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 12px 10px; backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);">
+                    <!-- Text container block on dark substrate (left side) - solid black, no overlap with man -->
+                    <div style="position: relative; z-index: 2; display: flex; flex-direction: column; max-width: 52%; width: 100%; background: rgba(6, 13, 20, 0.95); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 12px; padding: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.6);">
                         <div style="border-left: 2px solid var(--cyan); padding-left: 8px;">
-                            <p style="color: #fff; font-size: clamp(10px, 3vw, 13px); line-height: 1.35; font-weight: 600; margin: 0; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
+                            <p style="color: #fff; font-size: clamp(9px, 2.5vw, 12px); line-height: 1.35; font-weight: 600; margin: 0;">
                                 Применяем для маркетинга, SMM, продаж, HR, обучения руководителей и не только
                             </p>
-                        </div>
-                        
-                        <div class="dir-metric glass" style="border-color: var(--cyan); margin: 0; padding: 6px 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; width: 100%; box-sizing: border-box; background: rgba(0, 229, 255, 0.06); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: none; border-radius: 10px;">
-                            <div style="font-size: clamp(20px, 5.5vw, 26px); font-weight: 900; color: var(--cyan); line-height: 1; text-align: center; width: 100%;">×2–×5</div>
-                            <div style="font-size: clamp(9px, 2.4vw, 12px); opacity: 0.95; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; font-weight: 800; text-align: center; width: 100%;">к скорости работы команды</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bottom portion: list of capabilities -->
+                <!-- Bottom portion: list of capabilities + metric below -->
                 <div style="padding: 20px; background: rgba(0, 229, 255, 0.02); border-top: 1px solid rgba(0, 229, 255, 0.15);">
                     <div style="margin-bottom: 15px;">
                         <span style="display: inline-block; padding: 4px 12px; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 6px; font-size: 10px; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 1px; background: rgba(0, 229, 255, 0.05);">НЕКОТОРЫЕ ВОЗМОЖНОСТИ:</span>
                     </div>
-                    <div class="dir-list" style="grid-template-columns: 1fr; display: grid; gap: 16px; margin: 0; --check-color: var(--cyan);">
+                    <div class="dir-list" style="grid-template-columns: 1fr; display: grid; gap: 16px; margin: 0 0 20px 0; --check-color: var(--cyan);">
                         <div>
                             <span style="line-height: 1.35; display: block;">
                                 <span style="font-size: 15px; font-weight: 800; color: #fff;">Создание AI-приложений под задачи бизнеса</span> 
@@ -413,6 +408,11 @@
                                 <i style="opacity: 0.8; font-size: 12px; font-weight: 400; display: block; margin-top: 2px; color: rgba(255,255,255,0.7);">(чтобы технологии реально работали, а не лежали мёртвым грузом)</i>
                             </span>
                         </div>
+                    </div>
+                    <!-- Metric stretched full-width below capabilities -->
+                    <div class="dir-metric" style="border-color: var(--cyan); margin: 0; padding: 14px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; width: 100%; box-sizing: border-box; background: rgba(0, 229, 255, 0.08); border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 14px;">
+                        <div style="font-size: clamp(26px, 8vw, 36px); font-weight: 900; color: var(--cyan); line-height: 1; text-align: center; width: 100%;">×2–×5</div>
+                        <div style="font-size: clamp(11px, 3vw, 14px); opacity: 1; line-height: 1.2; text-transform: uppercase; letter-spacing: 1px; color: #fff; font-weight: 800; text-align: center; width: 100%;">к скорости работы команды</div>
                     </div>
                 </div>
             </div>
