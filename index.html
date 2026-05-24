@@ -356,20 +356,18 @@
             <span class="dir-tag" style="background: var(--cyan); color: #000; margin-bottom: 12px; font-size: 12px; font-weight: 800;">AI ДЛЯ БИЗНЕСА 🚀</span>
             <h2 style="font-size: clamp(24px, 5vw, 36px); margin-bottom: 12px; letter-spacing: -0.02em; font-weight: 900; text-transform: uppercase; color: #fff;"><span class="cyan-glow">AI-РЕШЕНИЯ</span> ПОД ЛЮБОЙ ОТДЕЛ</h2>
             
-            <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 15px; align-items: center; margin-bottom: 20px; width: 100%;">
-                <!-- Left: text and metric -->
-                <div style="display: flex; flex-direction: column; gap: 15px;">
+            <div class="glass mobile-banner-card" style="position: relative; padding: 30px 20px; border-radius: 24px; border: 1px solid rgba(0, 229, 255, 0.25); background: linear-gradient(rgba(10, 14, 20, 0.8), rgba(10, 14, 20, 0.8)), url('./mobil2.jpg') no-repeat center center; background-size: cover; margin-bottom: 20px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden;">
+                <!-- Decorative background glow -->
+                <div style="position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(0, 229, 255, 0.15), transparent 60%); pointer-events: none;"></div>
+                
+                <div style="position: relative; z-index: 2; display: flex; flex-direction: column; gap: 20px;">
                     <div style="border-left: 3px solid var(--cyan); padding-left: 15px;">
-                        <p style="color: rgba(255,255,255,0.95); font-size: 14px; line-height: 1.35; font-weight: 500; margin: 0;">Применяем для маркетинга, SMM, продаж, HR, обучения руководителей и не только</p>
+                        <p style="color: #fff; font-size: 15px; line-height: 1.4; font-weight: 600; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Применяем для маркетинга, SMM, продаж, HR, обучения руководителей и не только</p>
                     </div>
-                    <div class="dir-metric glass" style="border-color: var(--cyan); margin: 0; padding: 12px 15px; display: flex; align-items: center; gap: 10px;">
-                        <div style="font-size: 24px; font-weight: 900; color: var(--cyan); line-height: 1;">×2–×5</div>
-                        <div style="font-size: 9px; opacity: 0.7; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.85); font-weight: 600;">К СКОРОСТИ РАБОТЫ<br>КОМАНДЫ</div>
+                    <div class="dir-metric glass" style="border-color: var(--cyan); margin: 0; padding: 12px 18px; display: inline-flex; align-items: center; gap: 12px; align-self: flex-start; background: rgba(0, 229, 255, 0.05); backdrop-filter: blur(5px);">
+                        <div style="font-size: 26px; font-weight: 900; color: var(--cyan); line-height: 1;">×2–×5</div>
+                        <div style="font-size: 9px; opacity: 0.85; line-height: 1.25; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">К СКОРОСТИ РАБОТЫ<br>КОМАНДЫ</div>
                     </div>
-                </div>
-                <!-- Right: image -->
-                <div style="width: 100%;">
-                    <img src="./mobil1.jpg" alt="Возможности AI" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 20px; border: 1px solid rgba(0, 229, 255, 0.3); box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);">
                 </div>
             </div>
             
@@ -1949,7 +1947,7 @@
                 -webkit-text-fill-color: transparent !important;
                 text-shadow: none !important;
             }
-            #universal-mobile-section .glass {
+            #universal-mobile-section .glass:not(.mobile-banner-card) {
                 border-left: 3px solid var(--cyan) !important;
                 background: linear-gradient(to right, rgba(0, 229, 255, 0.03), transparent) !important;
             }
